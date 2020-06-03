@@ -10,7 +10,7 @@
         <!--First Tab View Controller-->
         <scene sceneID="YnV-Fq-h1w">
             <objects>
-                <viewController storyboardIdentifier="FirtstTabViewController" id="Ll5-Wb-4B3" customClass="FirstTabViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirtstTabViewController" id="Ll5-Wb-4B3" customClass="FirstTabViewController" customModule="MyWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scH-jn-ldb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
