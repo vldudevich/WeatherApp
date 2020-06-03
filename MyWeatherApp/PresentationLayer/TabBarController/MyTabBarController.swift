@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MyTabBarController.swift
 //  MyWeatherApp
 //
 //  Created by vladislav on 03.06.2020.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MyTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 }

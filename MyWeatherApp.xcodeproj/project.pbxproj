@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8616509E2487D63100233905 /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8616509D2487D63100233905 /* FirstTabViewController.swift */; };
+		861650A12487D6AA00233905 /* SecondTabViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861650A02487D6AA00233905 /* SecondTabViewController.storyboard */; };
+		861650A32487D6B800233905 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650A22487D6B800233905 /* SecondTabViewController.swift */; };
 		86482D242487AC6C00ED31D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86482D232487AC6C00ED31D8 /* AppDelegate.swift */; };
-		86482D282487AC6C00ED31D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86482D272487AC6C00ED31D8 /* ViewController.swift */; };
-		86482D2B2487AC6C00ED31D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86482D292487AC6C00ED31D8 /* Main.storyboard */; };
+		86482D2B2487AC6C00ED31D8 /* MyTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86482D292487AC6C00ED31D8 /* MyTabBarController.storyboard */; };
 		86482D2D2487AC6F00ED31D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86482D2C2487AC6F00ED31D8 /* Assets.xcassets */; };
 		86482D302487AC6F00ED31D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86482D2E2487AC6F00ED31D8 /* LaunchScreen.storyboard */; };
+		86482D382487D3F900ED31D8 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86482D372487D3F900ED31D8 /* MyTabBarController.swift */; };
+		86482D3C2487D46800ED31D8 /* FirstTabViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86482D3B2487D46800ED31D8 /* FirstTabViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8616509D2487D63100233905 /* FirstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewController.swift; sourceTree = "<group>"; };
+		861650A02487D6AA00233905 /* SecondTabViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondTabViewController.storyboard; sourceTree = "<group>"; };
+		861650A22487D6B800233905 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		86482D202487AC6B00ED31D8 /* MyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86482D232487AC6C00ED31D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		86482D272487AC6C00ED31D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		86482D2A2487AC6C00ED31D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		86482D2A2487AC6C00ED31D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyTabBarController.storyboard; sourceTree = "<group>"; };
 		86482D2C2487AC6F00ED31D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86482D2F2487AC6F00ED31D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86482D312487AC6F00ED31D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86482D372487D3F900ED31D8 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		86482D3B2487D46800ED31D8 /* FirstTabViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstTabViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8616509F2487D67300233905 /* FirstTabController */ = {
+			isa = PBXGroup;
+			children = (
+				8616509D2487D63100233905 /* FirstTabViewController.swift */,
+				86482D3B2487D46800ED31D8 /* FirstTabViewController.storyboard */,
+			);
+			path = FirstTabController;
+			sourceTree = "<group>";
+		};
+		861650A42487D6BF00233905 /* SecondTabController */ = {
+			isa = PBXGroup;
+			children = (
+				861650A22487D6B800233905 /* SecondTabViewController.swift */,
+				861650A02487D6AA00233905 /* SecondTabViewController.storyboard */,
+			);
+			path = SecondTabController;
+			sourceTree = "<group>";
+		};
 		86482D172487AC6B00ED31D8 = {
 			isa = PBXGroup;
 			children = (
@@ -55,13 +81,31 @@
 			isa = PBXGroup;
 			children = (
 				86482D232487AC6C00ED31D8 /* AppDelegate.swift */,
-				86482D272487AC6C00ED31D8 /* ViewController.swift */,
-				86482D292487AC6C00ED31D8 /* Main.storyboard */,
+				86482D392487D41B00ED31D8 /* PresentationLayer */,
 				86482D2C2487AC6F00ED31D8 /* Assets.xcassets */,
 				86482D2E2487AC6F00ED31D8 /* LaunchScreen.storyboard */,
 				86482D312487AC6F00ED31D8 /* Info.plist */,
 			);
 			path = MyWeatherApp;
+			sourceTree = "<group>";
+		};
+		86482D392487D41B00ED31D8 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				86482D3A2487D42B00ED31D8 /* TabBarController */,
+				8616509F2487D67300233905 /* FirstTabController */,
+				861650A42487D6BF00233905 /* SecondTabController */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		86482D3A2487D42B00ED31D8 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				86482D372487D3F900ED31D8 /* MyTabBarController.swift */,
+				86482D292487AC6C00ED31D8 /* MyTabBarController.storyboard */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +167,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				86482D302487AC6F00ED31D8 /* LaunchScreen.storyboard in Resources */,
+				86482D3C2487D46800ED31D8 /* FirstTabViewController.storyboard in Resources */,
+				861650A12487D6AA00233905 /* SecondTabViewController.storyboard in Resources */,
 				86482D2D2487AC6F00ED31D8 /* Assets.xcassets in Resources */,
-				86482D2B2487AC6C00ED31D8 /* Main.storyboard in Resources */,
+				86482D2B2487AC6C00ED31D8 /* MyTabBarController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,20 +181,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86482D282487AC6C00ED31D8 /* ViewController.swift in Sources */,
 				86482D242487AC6C00ED31D8 /* AppDelegate.swift in Sources */,
+				86482D382487D3F900ED31D8 /* MyTabBarController.swift in Sources */,
+				861650A32487D6B800233905 /* SecondTabViewController.swift in Sources */,
+				8616509E2487D63100233905 /* FirstTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		86482D292487AC6C00ED31D8 /* Main.storyboard */ = {
+		86482D292487AC6C00ED31D8 /* MyTabBarController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				86482D2A2487AC6C00ED31D8 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MyTabBarController.storyboard;
 			sourceTree = "<group>";
 		};
 		86482D2E2487AC6F00ED31D8 /* LaunchScreen.storyboard */ = {

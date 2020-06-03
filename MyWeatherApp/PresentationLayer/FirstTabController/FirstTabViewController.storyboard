@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mGi-3c-nid">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Tab View Controller-->
+        <scene sceneID="YnV-Fq-h1w">
+            <objects>
+                <viewController storyboardIdentifier="FirtstTabViewController" id="Ll5-Wb-4B3" customClass="FirstTabViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="scH-jn-ldb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="z2j-aW-BC8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="smv-qC-SuJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ttr-tE-AmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="368"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="LgP-j2-07k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mGi-3c-nid" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="1NW-1z-aFs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gGY-0X-71r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ll5-Wb-4B3" kind="relationship" relationship="rootViewController" id="5aO-IA-RAB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3o-UI-WEF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="667" y="368"/>
+        </scene>
+    </scenes>
+</document>
