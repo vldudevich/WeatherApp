@@ -17,6 +17,7 @@ class API {
     static let apiKey = "appid"
     static let apiKeyValue = "d4458b0662163707e0e4df2c0aceecb1"
     static let baseURL = "https://api.openweathermap.org/data/2.5/weather?"
+    static let imageURL = "http://openweathermap.org/img/wn/"
     
     static func request(for url: String, paramsDict: [String: Any]) -> DataRequest? {
         guard let searchURL = URL(string: url) else {
@@ -33,7 +34,7 @@ class API {
     }
     
     static func getWeatherByName(cityToSearch: String, success: @escaping CompletionBlock, failure: @escaping ErrorBlock) {
-        if let request = self.request(for: baseURL, paramsDict: ["q": cityToSearch]) {
+        if let request = self.request(for: baseURL, paramsDict: ["q": cityToSearch, "units": "metric"]) {
                 request.response(completionHandler: { (response) in
                     if let realData = response.data {
                         print("success recieve/search city")

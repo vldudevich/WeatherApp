@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CityWeather" representedClassName="CityWeather" syncable="YES" codeGenerationType="class">
+        <attribute name="base" optional="YES" attributeType="String"/>
+        <attribute name="code" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dataTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="indentifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nameCity" optional="YES" attributeType="String"/>
+        <attribute name="timezone" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="visibility" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weather" optional="YES" attributeType="Transformable"/>
+        <relationship name="clouds" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Clouds"/>
+        <relationship name="coord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coord"/>
+        <relationship name="system" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="System"/>
+        <relationship name="wind" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wind"/>
+    </entity>
+    <entity name="Clouds" representedClassName="Clouds" syncable="YES" codeGenerationType="class">
+        <attribute name="all" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Coord" representedClassName="Coord" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longtitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Main" representedClassName="Main" syncable="YES" codeGenerationType="class">
+        <attribute name="feelsLike" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="maxTemperature" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="minTemperature" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="System" representedClassName="System" syncable="YES" codeGenerationType="class">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="indentifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sunrise" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sunset" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Weather" representedClassName="Weather" syncable="YES" codeGenerationType="class">
+        <attribute name="descript" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="indentifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="main" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Wind" representedClassName="Wind" syncable="YES" codeGenerationType="class">
+        <attribute name="degree" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Coord" positionX="-63" positionY="-18" width="128" height="28"/>
+        <element name="Weather" positionX="-54" positionY="9" width="128" height="103"/>
+        <element name="Main" positionX="-36" positionY="45" width="128" height="28"/>
+        <element name="Wind" positionX="-18" positionY="90" width="128" height="73"/>
+        <element name="Clouds" positionX="0" positionY="99" width="128" height="58"/>
+        <element name="System" positionX="18" positionY="108" width="128" height="118"/>
+        <element name="CityWeather" positionX="-18" positionY="81" width="128" height="223"/>
+    </elements>
+</model>

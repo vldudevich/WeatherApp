@@ -12,6 +12,13 @@
 		861650A12487D6AA00233905 /* SecondTabViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861650A02487D6AA00233905 /* SecondTabViewController.storyboard */; };
 		861650A32487D6B800233905 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650A22487D6B800233905 /* SecondTabViewController.swift */; };
 		861650A62487EF1B00233905 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650A52487EF1B00233905 /* API.swift */; };
+		861650A92488D94500233905 /* CityWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650A82488D94500233905 /* CityWeather.swift */; };
+		861650AE2488EE8B00233905 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650AD2488EE8B00233905 /* Coordinate.swift */; };
+		861650B02488F0B600233905 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650AF2488F0B600233905 /* Weather.swift */; };
+		861650B62488F11400233905 /* Wind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650B52488F11400233905 /* Wind.swift */; };
+		861650B82488F12600233905 /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650B72488F12600233905 /* Clouds.swift */; };
+		861650BA2488F13400233905 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650B92488F13400233905 /* System.swift */; };
+		861650C02489037000233905 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650BF2489037000233905 /* Main.swift */; };
 		86482D242487AC6C00ED31D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86482D232487AC6C00ED31D8 /* AppDelegate.swift */; };
 		86482D2B2487AC6C00ED31D8 /* MyTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86482D292487AC6C00ED31D8 /* MyTabBarController.storyboard */; };
 		86482D2D2487AC6F00ED31D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86482D2C2487AC6F00ED31D8 /* Assets.xcassets */; };
@@ -27,6 +34,13 @@
 		861650A02487D6AA00233905 /* SecondTabViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondTabViewController.storyboard; sourceTree = "<group>"; };
 		861650A22487D6B800233905 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		861650A52487EF1B00233905 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		861650A82488D94500233905 /* CityWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeather.swift; sourceTree = "<group>"; };
+		861650AD2488EE8B00233905 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		861650AF2488F0B600233905 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		861650B52488F11400233905 /* Wind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wind.swift; sourceTree = "<group>"; };
+		861650B72488F12600233905 /* Clouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
+		861650B92488F13400233905 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		861650BF2489037000233905 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main.swift; path = /Users/vladislav/Documents/MyWeatherApp/MyWeatherApp/ModelsLayer/Main.swift; sourceTree = "<absolute>"; };
 		86482D202487AC6B00ED31D8 /* MyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86482D232487AC6C00ED31D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86482D2A2487AC6C00ED31D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyTabBarController.storyboard; sourceTree = "<group>"; };
@@ -84,6 +98,20 @@
 			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
+		861650AA2488D95000233905 /* ModelsLayer */ = {
+			isa = PBXGroup;
+			children = (
+				861650A82488D94500233905 /* CityWeather.swift */,
+				861650AD2488EE8B00233905 /* Coordinate.swift */,
+				861650AF2488F0B600233905 /* Weather.swift */,
+				861650BF2489037000233905 /* Main.swift */,
+				861650B52488F11400233905 /* Wind.swift */,
+				861650B72488F12600233905 /* Clouds.swift */,
+				861650B92488F13400233905 /* System.swift */,
+			);
+			path = ModelsLayer;
+			sourceTree = "<group>";
+		};
 		86482D172487AC6B00ED31D8 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				86482D232487AC6C00ED31D8 /* AppDelegate.swift */,
+				861650AA2488D95000233905 /* ModelsLayer */,
 				86482D392487D41B00ED31D8 /* PresentationLayer */,
 				861650A72487EF2100233905 /* NetworkLayer */,
 				86482D2E2487AC6F00ED31D8 /* LaunchScreen.storyboard */,
@@ -260,10 +289,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				861650B62488F11400233905 /* Wind.swift in Sources */,
+				861650B02488F0B600233905 /* Weather.swift in Sources */,
+				861650B82488F12600233905 /* Clouds.swift in Sources */,
+				861650BA2488F13400233905 /* System.swift in Sources */,
+				861650AE2488EE8B00233905 /* Coordinate.swift in Sources */,
 				86482D242487AC6C00ED31D8 /* AppDelegate.swift in Sources */,
 				86482D382487D3F900ED31D8 /* MyTabBarController.swift in Sources */,
 				861650A32487D6B800233905 /* SecondTabViewController.swift in Sources */,
 				8616509E2487D63100233905 /* FirstTabViewController.swift in Sources */,
+				861650A92488D94500233905 /* CityWeather.swift in Sources */,
+				861650C02489037000233905 /* Main.swift in Sources */,
 				861650A62487EF1B00233905 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
