@@ -25,7 +25,7 @@ struct CityWeather: Codable {
     var weather: [Weather]
     var base: String
     var main: Main
-    var visibility: Int
+    var visibility: Int?
     var wind: Wind
     var clouds: Clouds
     var dataTime: Int
@@ -60,7 +60,7 @@ struct CityWeather: Codable {
         self.weather = try container.decode([Weather].self, forKey: .weather)
         self.base = try container.decode(String.self, forKey: .base)
         self.main = try container.decode(Main.self, forKey: .main)
-        self.visibility = try container.decode(Int.self, forKey: .visibility)
+        self.visibility = try container.decodeIfPresent(Int.self, forKey: .visibility)
         self.wind = try container.decode(Wind.self, forKey: .wind)
         self.clouds = try container.decode(Clouds.self, forKey: .clouds)
         self.dataTime = try container.decode(Int.self, forKey: .dataTime)

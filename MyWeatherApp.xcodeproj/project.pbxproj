@@ -19,6 +19,7 @@
 		861650B82488F12600233905 /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650B72488F12600233905 /* Clouds.swift */; };
 		861650BA2488F13400233905 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650B92488F13400233905 /* System.swift */; };
 		861650C02489037000233905 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650BF2489037000233905 /* Main.swift */; };
+		861650E6248FDE5D00233905 /* WeatherUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861650E5248FDE5D00233905 /* WeatherUITableViewCell.swift */; };
 		86482D242487AC6C00ED31D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86482D232487AC6C00ED31D8 /* AppDelegate.swift */; };
 		86482D2B2487AC6C00ED31D8 /* MyTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86482D292487AC6C00ED31D8 /* MyTabBarController.storyboard */; };
 		86482D2D2487AC6F00ED31D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86482D2C2487AC6F00ED31D8 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		861650B72488F12600233905 /* Clouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
 		861650B92488F13400233905 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		861650BF2489037000233905 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main.swift; path = /Users/vladislav/Documents/MyWeatherApp/MyWeatherApp/ModelsLayer/Main.swift; sourceTree = "<absolute>"; };
+		861650E5248FDE5D00233905 /* WeatherUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITableViewCell.swift; sourceTree = "<group>"; };
 		86482D202487AC6B00ED31D8 /* MyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86482D232487AC6C00ED31D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86482D2A2487AC6C00ED31D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MyTabBarController.storyboard; sourceTree = "<group>"; };
@@ -84,8 +86,8 @@
 		861650A42487D6BF00233905 /* SecondTabController */ = {
 			isa = PBXGroup;
 			children = (
-				861650A22487D6B800233905 /* SecondTabViewController.swift */,
-				861650A02487D6AA00233905 /* SecondTabViewController.storyboard */,
+				861650E7248FDE6900233905 /* Cells */,
+				861650E4248FDE2E00233905 /* Controllers */,
 			);
 			path = SecondTabController;
 			sourceTree = "<group>";
@@ -110,6 +112,23 @@
 				861650B92488F13400233905 /* System.swift */,
 			);
 			path = ModelsLayer;
+			sourceTree = "<group>";
+		};
+		861650E4248FDE2E00233905 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				861650A22487D6B800233905 /* SecondTabViewController.swift */,
+				861650A02487D6AA00233905 /* SecondTabViewController.storyboard */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		861650E7248FDE6900233905 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				861650E5248FDE5D00233905 /* WeatherUITableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		86482D172487AC6B00ED31D8 = {
@@ -294,6 +313,7 @@
 				861650B82488F12600233905 /* Clouds.swift in Sources */,
 				861650BA2488F13400233905 /* System.swift in Sources */,
 				861650AE2488EE8B00233905 /* Coordinate.swift in Sources */,
+				861650E6248FDE5D00233905 /* WeatherUITableViewCell.swift in Sources */,
 				86482D242487AC6C00ED31D8 /* AppDelegate.swift in Sources */,
 				86482D382487D3F900ED31D8 /* MyTabBarController.swift in Sources */,
 				861650A32487D6B800233905 /* SecondTabViewController.swift in Sources */,

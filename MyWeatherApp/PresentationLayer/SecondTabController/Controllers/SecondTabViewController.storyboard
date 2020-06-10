@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="151" id="16i-g8-lPf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="151" id="16i-g8-lPf" customClass="WeatherUITableViewCell" customModule="MyWeatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="16i-g8-lPf" id="3ZA-mT-U5a">
@@ -63,6 +63,12 @@
                                                 <constraint firstItem="TcF-to-3rD" firstAttribute="top" secondItem="3ZA-mT-U5a" secondAttribute="topMargin" constant="32" id="tvw-Ed-tWc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="daylyImageView" destination="Hrg-c0-uoN" id="E7R-Ke-YAS"/>
+                                            <outlet property="stateLabel" destination="e0t-jD-QCg" id="SvZ-3p-65E"/>
+                                            <outlet property="temperatureLabel" destination="sGB-Dv-ECP" id="2wy-8u-d8a"/>
+                                            <outlet property="timeLabel" destination="TcF-to-3rD" id="Rrt-tN-yB1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -82,11 +88,11 @@
             </objects>
             <point key="canvasLocation" x="2297.1014492753625" y="1157.8125"/>
         </scene>
-        <!--Item 2-->
+        <!--Forecast-->
         <scene sceneID="zfC-i4-89V">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4cT-gQ-x9r" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="RM9-OA-f45"/>
+                    <tabBarItem key="tabBarItem" title="Forecast" image="cloud" selectedImage="cloud" id="RM9-OA-f45"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mDh-br-PYJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -102,4 +108,7 @@
             <point key="canvasLocation" x="1386.9565217391305" y="1157.8125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cloud" width="25" height="25"/>
+    </resources>
 </document>

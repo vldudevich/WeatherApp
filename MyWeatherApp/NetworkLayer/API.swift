@@ -47,4 +47,14 @@ class API {
                 failure("Request create unsuccessfull")
             }
         }
+    
+    static func getImageUrl(url: String, bigSize: Bool) -> String {
+        switch bigSize {
+        case true:
+            return self.imageURL + url + "@2x.png"
+        case false:
+            return self.imageURL + url + ".png"
+        }
+    
+    }
 }

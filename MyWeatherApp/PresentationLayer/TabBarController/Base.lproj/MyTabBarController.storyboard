@@ -6,18 +6,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="ueg-7q-byW">
             <objects>
-                <tabBarController id="C0c-GQ-yrs" customClass="MyTabBarController" customModule="MyWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="daR-l4-o66">
+                <tabBarController id="C0c-GQ-yrs" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="daR-l4-o66">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9rk-Xk-i8b" kind="relationship" relationship="viewControllers" id="V4g-Yf-p8W"/>
-                        <segue destination="yc5-t0-t6K" kind="relationship" relationship="viewControllers" id="9mF-8A-9G9"/>
+                        <segue destination="LM6-Ie-pVr" kind="relationship" relationship="viewControllers" id="6BY-1t-6rA"/>
+                        <segue destination="tFc-xn-Cn0" kind="relationship" relationship="viewControllers" id="Li3-DS-ZMM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Em-XV-TlP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -25,24 +25,24 @@
             <point key="canvasLocation" x="-100" y="857"/>
         </scene>
         <!--SecondTabViewController-->
-        <scene sceneID="Aa8-YR-yET">
+        <scene sceneID="tzC-1V-d3z">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="FirstTabViewController" storyboardName="SecondTabViewController" id="yc5-t0-t6K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="DqK-bd-1WE"/>
+                <viewControllerPlaceholder storyboardName="SecondTabViewController" id="tFc-xn-Cn0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Forecast" id="sAU-gX-y7M"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lBS-CR-eag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZrA-LS-30X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733" y="1110"/>
+            <point key="canvasLocation" x="664" y="1037"/>
         </scene>
         <!--FirstTabViewController-->
-        <scene sceneID="vgR-t3-uHP">
+        <scene sceneID="92h-RT-gch">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SecondTabViewController" storyboardName="FirstTabViewController" id="9rk-Xk-i8b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="Item" id="aOR-OT-JZl"/>
+                <viewControllerPlaceholder storyboardName="FirstTabViewController" id="LM6-Ie-pVr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today" id="MNa-Yz-3N9"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fMq-eI-Et6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CdX-oL-8js" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="572"/>
+            <point key="canvasLocation" x="608" y="600"/>
         </scene>
     </scenes>
 </document>
