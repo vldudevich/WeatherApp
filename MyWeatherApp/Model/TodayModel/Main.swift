@@ -29,7 +29,7 @@ struct Main: Codable  {
     init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         self.temperature = try container.decode(Float.self, forKey: .temperature)
         self.feelsLike = try container.decode(Float.self, forKey: .feelsLike)
         self.minTemperature = try container.decode(Float.self, forKey: .minTemperature)

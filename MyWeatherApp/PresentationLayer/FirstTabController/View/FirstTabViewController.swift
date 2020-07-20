@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import AlamofireImage
+import CoreLocation
 
 class FirstTabViewController: UIViewController {
-
-    var results: CityWeather?
-    var cityToSearch = "Taganrog"
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var cityTemperatureImageView: UIImageView!
     @IBOutlet weak var cityNameLabel: UILabel!
@@ -35,34 +34,45 @@ class FirstTabViewController: UIViewController {
     
     @IBOutlet weak var shareButton: UIButton!
     
+    private var results: CityWeather?
+    private var cityToSearch = "Taganrog"
+    
+    var output: FirstTabViewOutput!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getWeatherData()
-        self.navigationItem.title = "Today"
+        
+        output.onViewDidLoad(with: cityToSearch)
     }
     
     @IBAction func pressToShare(_ sender: Any) {
-        let activityController = UIActivityViewController(activityItems: [], applicationActivities: nil)
+        
+        let activityController = UIActivityViewController(activityItems: [cityNameLabel.text ?? "city", cityTemperatureLabel.text ?? "temperature", cityTemperatureImageView.image], applicationActivities: nil)
         self.present(activityController, animated: true)
     }
-    
-    func getWeatherData() {
-        API.getWeatherByName(cityToSearch: cityToSearch,  success: { (data) in
-            CityWeather.parseResponse(responseData: data) { (weather) in
-                guard let data = weather else {return}
-                self.results = data
-                self.updateData()
-            }
-        }) { (error) in
-            print(error)
+
+}
+
+extension FirstTabViewController: FirstTabViewInput {
+    func setupState() {
+        self.navigationItem.title = "Today"
+        
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
         }
     }
     
-    func updateData() {
-
-        guard let results = results else {return}
-        guard let icon = results.weather[0].icon else {return}
-        cityTemperatureImageView.af.setImage(withURL: URL(string: API.getImageUrl(url: icon, bigSize: true))!)
+    func onWeatherGet(results: CityWeather) {
+        self.results = results
+        
+        results.weather[0].getImage(bigSize: true) { (image) in
+            self.cityTemperatureImageView.image = image
+        }
+        
         cityNameLabel.text = "\(results.nameCity), \(results.system.country)"
         cityTemperatureLabel.text = "\(Int(results.main.temperature))С° | \(results.weather[0].main)"
 
@@ -80,5 +90,25 @@ class FirstTabViewController: UIViewController {
 
         directionImageView.image = UIImage(named: "wind-rose")
         directionLabel.text = results.wind.degreeToString
+    }
+}
+extension FirstTabViewController: CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        print(location.coordinate)
+        
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(location, completionHandler:
+            {
+                placemarks, error -> Void in
+                
+                // Place details
+                guard let placeMark = placemarks?.first else { return }
+                // City
+                if let city = placeMark.subAdministrativeArea {
+                    self.cityToSearch = city
+                }
+        })
     }
 }

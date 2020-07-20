@@ -9,8 +9,17 @@
 import UIKit
 
 class MyTabBarController: UITabBarController {
-
+    
+    var output: MyTabBarViewOutput!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        output.onViewDidLoad()
+    }
+}
+
+extension MyTabBarController: MyTabBarViewInput {
+    func setupState() {
+        
     }
 }
