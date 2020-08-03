@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct Weather: Codable  {
+    
     var indentifier: Int
     var main: String
     var descript: String

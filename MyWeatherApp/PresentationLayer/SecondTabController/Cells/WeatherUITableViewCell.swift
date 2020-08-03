@@ -21,5 +21,8 @@ class WeatherUITableViewCell: UITableViewCell {
         temperatureLabel.text = "\(Int(forecast.mainForecast.temperature))"
         stateLabel.text = forecast.weatherForecast.first?.main
         timeLabel.text = forecast.customForecastDate
+        forecast.weatherForecast[0].getImage(bigSize: true) { (image) in
+            self.daylyImageView.image = image
+        }
     }
 }

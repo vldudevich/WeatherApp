@@ -11,5 +11,4 @@ import Foundation
 protocol SecondTabViewInput: AnyObject {
     func setupState()
     func onForecastGet(results: DailyForecast)
-
 }

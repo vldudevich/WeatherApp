@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import GooglePlaces
 
 class SecondTabViewController: UIViewController {
     
@@ -24,6 +25,7 @@ class SecondTabViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let headerNib = UINib.init(nibName: "HeaderDailyForecast", bundle: Bundle.main)
         dailyTableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderDailyForecast")
         output.onViewDidLoad(cityToSearch: cityToSearch)
@@ -48,10 +50,14 @@ extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return test[section]
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "hello"
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let myView = dailyTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderDailyForecast") as! HeaderDailyForecast
+        myView.configure(for: section)
+        
+        return myView
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WeatherUITableViewCell.indentifier) as! WeatherUITableViewCell
         cell.configureCell(forecast: forecast[indexPath.row])
@@ -75,12 +81,10 @@ extension SecondTabViewController: SecondTabViewInput {
         dateFormater.dateFormat = "yyyy-MM-dd"
         var lastDate = dateFormater.string(from: dateSource!)
         var count = 0
-        var count2 = 0
         for item in results.list {
             if (item.dateText.contains(lastDate)) {
                 count += 1
             } else {
-                count2 += 1
                 dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
                 dateSource = dateFormater.date(from: item.dateText)
@@ -92,7 +96,6 @@ extension SecondTabViewController: SecondTabViewInput {
                 count = 0
             }
         }
-        print(count)
         dailyTableView.reloadData()
     }
         
@@ -102,7 +105,7 @@ extension SecondTabViewController: SecondTabViewInput {
         
         dailyTableView.delegate = self
         dailyTableView.dataSource = self
-        
+        dailyTableView.estimatedSectionHeaderHeight = 50
         locationManager.requestAlwaysAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {

@@ -12,22 +12,23 @@ class HeaderDailyForecast: UITableViewHeaderFooterView {
 
     @IBOutlet weak var headerLabel: UILabel!
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        self.commonInitialization()
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        commonInitialization()
-//    }
-//    
-//    func commonInitialization() {
-//        let ar = Bundle.main.loadNibNamed("HeaderDailyForecast", owner: self, options: nil)
-//        addSubview(contentView)
-//        contentView.frame = self.bounds
-//        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth ]
-//        
-//    }
-    
+    func configure(for section: Int) {
+        
+        let date = Date()
+        let calendar = Calendar(identifier: .gregorian)
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd"
+
+        for item in 0...section {
+            if section == 0 {
+                headerLabel.text = "Today"
+            } else if section == 1 {
+                headerLabel.text = "Tomorrow"
+            } else {
+                let nextDayDate = calendar.date(byAdding: .day, value: item, to: date)!
+                let myDate = dateFormater.string(from: nextDayDate)
+                headerLabel.text = myDate
+            }
+        }
+    }
 }

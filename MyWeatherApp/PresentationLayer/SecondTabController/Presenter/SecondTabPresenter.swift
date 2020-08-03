@@ -12,27 +12,19 @@ class SecondTabPresenter: SecondTabViewOutput {
     
     weak var view: SecondTabViewInput!
     
-    static var dataFormaterDays: DateFormatter = {
-        var format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return format
-    }()
-    
-    static var dataFormaterTime: DateFormatter = {
-        var format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd"
-        return format
-    }()
+    private func getDailyForecastData(cityToSearch: String) {
+        DataManager.sharedManager.getDailyForeast(cityToSearch: cityToSearch) { (forecast) in
+            self.view.onForecastGet(results: forecast)
+        }
+    }
     
     func onViewDidLoad(cityToSearch: String) {
         getDailyForecastData(cityToSearch: cityToSearch)
         view.setupState()
     }
     
-    private func getDailyForecastData(cityToSearch: String) {
-        DataManager.sharedManager.getDailyForeast(cityToSearch: cityToSearch) { (forecast) in
-            self.view.onForecastGet(results: forecast)
-        }
+    func onSectionGet(for section: Int) {
+        
     }
     
 }

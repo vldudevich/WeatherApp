@@ -33,21 +33,22 @@ class FirstTabViewController: UIViewController {
     @IBOutlet weak var directionLabel: UILabel!
     
     @IBOutlet weak var shareButton: UIButton!
-    
+    private let cityVC = SuggestionsTableViewController()
     private var results: CityWeather?
     private var cityToSearch = "Taganrog"
-    
+    private var mySearchController = UISearchController()
     var output: FirstTabViewOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cityVC.delegate = self
         output.onViewDidLoad(with: cityToSearch)
     }
     
     @IBAction func pressToShare(_ sender: Any) {
         
-        let activityController = UIActivityViewController(activityItems: [cityNameLabel.text ?? "city", cityTemperatureLabel.text ?? "temperature", cityTemperatureImageView.image], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [cityNameLabel.text ?? "city", cityTemperatureLabel.text ?? "temperature", cityTemperatureImageView.image!], applicationActivities: nil)
         self.present(activityController, animated: true)
     }
 
@@ -55,8 +56,8 @@ class FirstTabViewController: UIViewController {
 
 extension FirstTabViewController: FirstTabViewInput {
     func setupState() {
-        self.navigationItem.title = "Today"
-        
+        navigationItem.title = "Today"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTouchUpInside))
         locationManager.requestAlwaysAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
@@ -64,6 +65,16 @@ extension FirstTabViewController: FirstTabViewInput {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
+        
+        let myVController = SuggestionsTableViewController()
+        myVController.delegate = self
+    }
+    @objc func addButtonTouchUpInside() {
+        
+        guard let myVC = UIStoryboard(name: "SuggestionsTableViewController", bundle: nil).instantiateInitialViewController() else { return }
+
+        self.present(myVC, animated:true, completion: nil)
+        
     }
     
     func onWeatherGet(results: CityWeather) {
@@ -72,9 +83,8 @@ extension FirstTabViewController: FirstTabViewInput {
         results.weather[0].getImage(bigSize: true) { (image) in
             self.cityTemperatureImageView.image = image
         }
-        
         cityNameLabel.text = "\(results.nameCity), \(results.system.country)"
-        cityTemperatureLabel.text = "\(Int(results.main.temperature))С° | \(results.weather[0].main)"
+        cityTemperatureLabel.text = "\(Int(results.main.temperature)) С° | \(results.weather[0].main)"
 
         cloudsImageView.image = UIImage(named: "humidity")
         cloudsLabel.text = "\(results.main.humidity)%"
@@ -111,4 +121,11 @@ extension FirstTabViewController: CLLocationManagerDelegate {
                 }
         })
     }
+}
+
+extension FirstTabViewController: SuggestionsTableResultDelegate {
+    func shareCityTouchUpInside(_ city: String) {
+        print(city)
+    }
+    
 }

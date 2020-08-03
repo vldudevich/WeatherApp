@@ -7,5 +7,12 @@ target 'MyWeatherApp' do
   pod 'Alamofire', '~> 5.2'
   pod 'AlamofireImage', '~> 4.1'
   # Pods for MyWeatherApp
+  pod 'Firebase', '>= 2.5.1'
+  pod ‘Firebase/Core’
+  pod ‘Firebase/Database’
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
+  pod ‘Firebase/Auth’
+  pod 'GooglePlaces'
 
 end

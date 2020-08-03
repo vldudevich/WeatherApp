@@ -10,5 +10,5 @@ import Foundation
 
 protocol SecondTabViewOutput {
     func onViewDidLoad(cityToSearch: String)
-    
+    func onSectionGet(for section: Int)
 }
