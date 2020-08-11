@@ -56,6 +56,7 @@ class FirstTabViewController: UIViewController {
 
 extension FirstTabViewController: FirstTabViewInput {
     func setupState() {
+        
         navigationItem.title = "Today"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTouchUpInside))
         locationManager.requestAlwaysAuthorization()
@@ -71,10 +72,10 @@ extension FirstTabViewController: FirstTabViewInput {
     }
     @objc func addButtonTouchUpInside() {
         
-        guard let myVC = UIStoryboard(name: "SuggestionsTableViewController", bundle: nil).instantiateInitialViewController() else { return }
-
-        self.present(myVC, animated:true, completion: nil)
-        
+        let navController = UIStoryboard(name: "SuggestionsTableViewController", bundle: nil).instantiateInitialViewController() as? UINavigationController
+        let viewController = navController?.viewControllers.first as? SuggestionsTableViewController
+        viewController?.delegate = self
+        present(navController!, animated: true)
     }
     
     func onWeatherGet(results: CityWeather) {

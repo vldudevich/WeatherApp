@@ -23,6 +23,8 @@ class SecondTabViewController: UIViewController {
     
     var output: SecondTabViewOutput!
     
+    var hiddenSections = Set<Int>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +42,29 @@ class SecondTabViewController: UIViewController {
             print(error)
         }
     }
+    
+    @objc
+    private func pressForHideSection(sender: UIButton) {
+        let section = sender.tag
+        func indexPathsForSection() -> [IndexPath] {
+            var indexPaths = [IndexPath]()
+            
+            for row in 0..<test[section] {
+                indexPaths.append(IndexPath(row: row,
+                                            section: section))
+            }
+            
+            return indexPaths
+        }
+        if  hiddenSections.contains(section) {
+            hiddenSections.remove(section)
+            dailyTableView.insertRows(at: indexPathsForSection(),
+                                      with: .fade)
+        } else if hiddenSections.count != test.count - 1 {
+            hiddenSections.insert(section)
+            dailyTableView.deleteRows(at: indexPathsForSection(),
+                                      with: .fade)
+        }    }
 }
 
 extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,13 +73,18 @@ extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.hiddenSections.contains(section) {
+            return 0
+        }
+        
         return test[section]
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let myView = dailyTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderDailyForecast") as! HeaderDailyForecast
         myView.configure(for: section)
-        
+        myView.headerButton.tag = section
+        myView.headerButton.addTarget(self, action: #selector(pressForHideSection(sender:)), for: .touchUpInside)
         return myView
     }
     

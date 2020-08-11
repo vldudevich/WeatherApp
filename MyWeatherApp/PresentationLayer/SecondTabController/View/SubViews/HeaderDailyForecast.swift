@@ -10,7 +10,8 @@ import UIKit
 
 class HeaderDailyForecast: UITableViewHeaderFooterView {
 
-    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var headerButton: UIButton!
+    
     
     func configure(for section: Int) {
         
@@ -18,17 +19,18 @@ class HeaderDailyForecast: UITableViewHeaderFooterView {
         let calendar = Calendar(identifier: .gregorian)
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd"
-
+        
         for item in 0...section {
             if section == 0 {
-                headerLabel.text = "Today"
+                headerButton.setTitle("Today", for: .normal)
             } else if section == 1 {
-                headerLabel.text = "Tomorrow"
+                headerButton.setTitle("Tomorrow", for: .normal)
             } else {
                 let nextDayDate = calendar.date(byAdding: .day, value: item, to: date)!
                 let myDate = dateFormater.string(from: nextDayDate)
-                headerLabel.text = myDate
+                headerButton.setTitle(myDate, for: .normal)
             }
         }
     }
+    
 }

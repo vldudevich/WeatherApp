@@ -15,37 +15,39 @@ protocol SuggestionsTableResultDelegate {
 class SuggestionsTableViewController: UITableViewController {
     
     private var searchCompleter: MKLocalSearchCompleter?
-    private var searchRegion: MKCoordinateRegion = MKCoordinateRegion(MKMapRect.world)
-    private var currentPlacemark: CLPlacemark?
     
-    private var suggestionController: SuggestionsTableViewController!
+    private var suggestionController: UITableViewController!
     
     private var searchController: UISearchController!
     
     var delegate: SuggestionsTableResultDelegate?
     
     var completerResults: [MKLocalSearchCompletion]?
+    
     var output: SuggestionsTableViewControllerOutput!
-    var city = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(SuggestedCompletionTableViewCell.self, forCellReuseIdentifier: SuggestedCompletionTableViewCell.reuseID)
-        tableView.delegate = self
+        suggestionController = UITableViewController(style: .grouped)
+        suggestionController.tableView.register(SuggestedCompletionTableViewCell.self, forCellReuseIdentifier: SuggestedCompletionTableViewCell.reuseID)
+        suggestionController.tableView.dataSource = self
+        suggestionController.tableView.delegate = self
         
-        suggestionController = SuggestionsTableViewController(style: .grouped)
         searchController = UISearchController(searchResultsController: suggestionController)
-        searchController.searchResultsUpdater = suggestionController
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        
+        
+        startProvidingCompletions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        searchController.searchBar.delegate = self
-        startProvidingCompletions()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -86,7 +88,7 @@ extension SuggestionsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let city = completerResults?[indexPath.row].title else { return }
-        self.city = city
+        delegate?.shareCityTouchUpInside(city)
     }
     
     private func createHighlightedString(text: String, rangeValues: [NSValue]) -> NSAttributedString {
@@ -110,7 +112,7 @@ extension SuggestionsTableViewController: MKLocalSearchCompleterDelegate {
         // As the user types, new completion suggestions are continuously returned to this method.
         // Overwrite the existing results, and then refresh the UI with the new results.
         completerResults = completer.results
-        tableView.reloadData()
+        suggestionController.tableView.reloadData()
     }
 }
 
@@ -140,8 +142,6 @@ extension SuggestionsTableViewController: SuggestionsTableViewControllerInput {
     func setupState() {
 
     }
-    
-    
 }
 
 extension SuggestionsTableViewController: UISearchBarDelegate {
