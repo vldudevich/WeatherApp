@@ -44,12 +44,12 @@ class API {
             failure("Request create unsuccessfull")
         }
     }
-    
+
     func getDailyForecast(cityToSearch: String, success: @escaping CompletionBlock, failure: @escaping ErrorBlock) {
         if let request = request(for: APIConstants.dailyForecastURL, paramsDict: ["q": cityToSearch, "units": "metric"]) {
             request.response(completionHandler: { (response) in
                 if let realData = response.data {
-                    print("success forecast city")
+                    print("success forecast city by name")
                     success(realData)
                 } else {
                     failure("No data")

@@ -9,18 +9,19 @@
 import Foundation
 
 struct CoordForecast: Codable {
-    var longtitude: Float
-    var latitude: Float
+    
+    var latitude: Double
+    var longtitude: Double
     
     private enum CodingKeys: String, CodingKey {
-        case longtitude = "lon"
         case latitude = "lat"
+        case longtitude = "lon"
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.longtitude = try container.decode(Float.self, forKey: .longtitude)
-        self.latitude = try container.decode(Float.self, forKey: .latitude)
+        self.longtitude = try container.decode(Double.self, forKey: .longtitude)
+        self.latitude = try container.decode(Double.self, forKey: .latitude)
     }
 }

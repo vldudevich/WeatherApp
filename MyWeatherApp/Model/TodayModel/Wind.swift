@@ -9,7 +9,7 @@
 import Foundation
 
 struct Wind: Codable  {
-    var speed: Float
+    var speed: Double
     var degree: Int
     var degreeToString: String {
         
@@ -58,7 +58,7 @@ struct Wind: Codable  {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.speed = try container.decode(Float.self, forKey: .speed)
+        self.speed = try container.decode(Double.self, forKey: .speed)
         self.degree = try container.decode(Int.self, forKey: .degree)
     }
 }

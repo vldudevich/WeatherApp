@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1BV-0E-KfR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Tab View Controller-->
+        <scene sceneID="btq-Z1-O2R">
+            <objects>
+                <viewController id="BT4-6f-HuP" customClass="FirstTabViewController" customModule="MyWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FkJ-Eb-DA1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mxv-eR-hSE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Tn5-Rn-dpw" firstAttribute="bottom" secondItem="mxv-eR-hSE" secondAttribute="bottom" id="0iM-Xv-z9b"/>
+                            <constraint firstItem="mxv-eR-hSE" firstAttribute="leading" secondItem="Tn5-Rn-dpw" secondAttribute="leading" id="2kY-dc-lmt"/>
+                            <constraint firstItem="mxv-eR-hSE" firstAttribute="top" secondItem="Tn5-Rn-dpw" secondAttribute="top" id="y2e-7n-5ot"/>
+                            <constraint firstItem="mxv-eR-hSE" firstAttribute="trailing" secondItem="Tn5-Rn-dpw" secondAttribute="trailing" id="ytQ-Jc-Fju"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tn5-Rn-dpw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PGW-eQ-DqA"/>
+                    <connections>
+                        <outlet property="contentView" destination="mxv-eR-hSE" id="cXW-nh-mvW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sfd-rb-SPL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="yz8-Yb-sMf" customClass="FirstTabInitializer" customModule="MyWeatherApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="BT4-6f-HuP" id="qDW-le-ae2"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="2739.130434782609" y="1082.8125"/>
+        </scene>
+        <!--Today-->
+        <scene sceneID="DCI-gp-sbT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1BV-0E-KfR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Today" image="sun" selectedImage="sun" id="P6t-be-HJ7"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="19c-aB-93a">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BT4-6f-HuP" kind="relationship" relationship="rootViewController" id="amB-0V-hv8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbZ-VH-dwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828.985507246377" y="1082.8125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sun" width="25" height="25"/>
+    </resources>
+</document>

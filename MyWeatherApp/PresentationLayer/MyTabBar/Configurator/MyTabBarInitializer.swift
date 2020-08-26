@@ -10,7 +10,7 @@ import UIKit
 
 class MyTabBarInitializer: NSObject {
     
-    @IBOutlet weak private var viewController: MyTabBarController!
+    @IBOutlet private weak var viewController: MyTabBarController!
     
     override func awakeFromNib() {
         

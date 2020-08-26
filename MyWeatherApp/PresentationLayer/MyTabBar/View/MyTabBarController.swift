@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MyTabBarController: UITabBarController {
-    
+
     var output: MyTabBarViewOutput!
     
     override func viewDidLoad() {
@@ -20,6 +21,5 @@ class MyTabBarController: UITabBarController {
 
 extension MyTabBarController: MyTabBarViewInput {
     func setupState() {
-        
     }
 }

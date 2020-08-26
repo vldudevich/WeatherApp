@@ -14,5 +14,6 @@ target 'MyWeatherApp' do
   pod 'Firebase/Analytics'
   pod ‘Firebase/Auth’
   pod 'GooglePlaces'
+  pod 'SwiftyPlistManager'
 
 end

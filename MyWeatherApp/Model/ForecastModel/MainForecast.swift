@@ -10,10 +10,10 @@ import Foundation
 
 struct MainForecast: Codable {
     
-    var temperature: Float
-    var feelsLike: Float
-    var minTemperature: Float
-    var maxTemperature: Float
+    var temperature: Double
+    var feelsLike: Double
+    var minTemperature: Double
+    var maxTemperature: Double
     var pressure: Int
     var seaLevel: Int
     var groundLevel: Int
@@ -35,10 +35,10 @@ struct MainForecast: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.temperature = try container.decode(Float.self, forKey: .temperature)
-        self.feelsLike = try container.decode(Float.self, forKey: .feelsLike)
-        self.minTemperature = try container.decode(Float.self, forKey: .minTemperature)
-        self.maxTemperature = try container.decode(Float.self, forKey: .maxTemperature)
+        self.temperature = try container.decode(Double.self, forKey: .temperature)
+        self.feelsLike = try container.decode(Double.self, forKey: .feelsLike)
+        self.minTemperature = try container.decode(Double.self, forKey: .minTemperature)
+        self.maxTemperature = try container.decode(Double.self, forKey: .maxTemperature)
         self.pressure = try container.decode(Int.self, forKey: .pressure)
         self.seaLevel = try container.decode(Int.self, forKey: .seaLevel)
         self.groundLevel = try container.decode(Int.self, forKey: .groundLevel)
