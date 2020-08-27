@@ -9,6 +9,5 @@
 import UIKit
 
 protocol MyTabBarViewOutput {
-    
     func onViewDidLoad()
 }

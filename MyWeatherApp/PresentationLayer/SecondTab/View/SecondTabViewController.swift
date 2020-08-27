@@ -31,8 +31,7 @@ class SecondTabViewController: UIViewController {
         }
     }
     
-    @objc
-    private func pressForHideSection(sender: UIButton) {
+    @objc private func pressForHideSection(sender: UIButton) {
         let section = sender.tag
         func indexPathsForSection() -> [IndexPath] {
             var indexPaths = [IndexPath]()

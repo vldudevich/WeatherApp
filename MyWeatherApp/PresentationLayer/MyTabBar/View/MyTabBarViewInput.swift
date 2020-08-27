@@ -9,6 +9,5 @@
 import UIKit
 
 protocol MyTabBarViewInput: AnyObject {
-    
     func setupState()
 }

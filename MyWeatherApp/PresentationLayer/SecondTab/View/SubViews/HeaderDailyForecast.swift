@@ -9,10 +9,12 @@
 import UIKit
 
 class HeaderDailyForecast: UITableViewHeaderFooterView {
+    
     enum HeaderDailyForecastHeaders: String {
         case today
         case tommorow
     }
+    
     @IBOutlet weak var headerButton: UIButton!
     
     func configure(for section: Int) {

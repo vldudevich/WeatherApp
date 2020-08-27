@@ -49,12 +49,11 @@ class TodayWeatherContentViewController: UIViewController {
 
 extension TodayWeatherContentViewController: TodayWeatherContentViewInput {
     func setupState() {
-        
         setupUI()
     }
     
     func setupUI() {
-        
+    
         results.weather.first?.getImage(bigSize: true) { (image) in
             self.cityTemperatureImageView.image = image
         }

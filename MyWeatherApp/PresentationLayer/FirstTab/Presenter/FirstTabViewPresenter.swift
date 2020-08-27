@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 
 class FirstTabViewPresenter: FirstTabViewOutput {
+    
     weak var view: FirstTabViewInput!
     
     func onViewDidLoad() {
@@ -17,7 +18,6 @@ class FirstTabViewPresenter: FirstTabViewOutput {
     }
     
     func getTodayData(cityToSearch: String) {
-        
         view.setupState()
         getWeatherData(cityToSearch: cityToSearch)
     }
@@ -29,7 +29,6 @@ class FirstTabViewPresenter: FirstTabViewOutput {
             Utils.cities.append(cityToSearch)
             self.view.onWeatherPageGet(results: page!)
         }
-        
     }
 }
 
