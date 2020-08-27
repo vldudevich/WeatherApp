@@ -28,8 +28,6 @@ class SuggestionsTableViewController: UITableViewController {
     var completerResults: [MKLocalSearchCompletion]?
     
     var output: SuggestionsTableViewControllerOutput!
-   
-    var cityToSearch = String()
     
     var flag = false
     

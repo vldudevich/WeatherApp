@@ -40,6 +40,11 @@ class TodayWeatherContentViewController: UIViewController {
         super.viewDidLoad()
         output.onViewDidLoad()
     }
+    
+    @IBAction func shareClickTodayWeather(_ sender: Any) {
+        let activityController = UIActivityViewController(activityItems: [cityNameLabel.text, cityTemperatureLabel.text], applicationActivities: nil)
+        present(activityController, animated: true)
+    }
 }
 
 extension TodayWeatherContentViewController: TodayWeatherContentViewInput {

@@ -15,7 +15,6 @@ class FirstTabViewController: UIViewController {
     var output: FirstTabViewOutput!
     var pageController = MyPageViewController()
     
-    var cityToSearch = "Moscow"
     override func viewDidLoad() {
         super.viewDidLoad()
         output.onViewDidLoad()
@@ -62,6 +61,7 @@ extension FirstTabViewController: FirstTabViewInput {
         
         addChild(pageController)
         contentView.addSubview(pageController.view)
+        pageController.view.fillToSuperview()
         pageController.didMove(toParent: self)
     
     }

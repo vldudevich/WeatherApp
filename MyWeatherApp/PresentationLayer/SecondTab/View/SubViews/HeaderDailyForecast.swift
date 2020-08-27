@@ -9,7 +9,10 @@
 import UIKit
 
 class HeaderDailyForecast: UITableViewHeaderFooterView {
-
+    enum HeaderDailyForecastHeaders: String {
+        case today
+        case tommorow
+    }
     @IBOutlet weak var headerButton: UIButton!
     
     func configure(for section: Int) {
@@ -21,9 +24,9 @@ class HeaderDailyForecast: UITableViewHeaderFooterView {
         
         for item in 0...section {
             if section == 0 {
-                headerButton.setTitle("Today", for: .normal)
+                headerButton.setTitle(HeaderDailyForecastHeaders.today.rawValue.capitalized, for: .normal)
             } else if section == 1 {
-                headerButton.setTitle("Tomorrow", for: .normal)
+                headerButton.setTitle(HeaderDailyForecastHeaders.tommorow.rawValue.capitalized, for: .normal)
             } else {
                 let nextDayDate = calendar.date(byAdding: .day, value: item, to: date)!
                 let myDate = dateFormater.string(from: nextDayDate)
