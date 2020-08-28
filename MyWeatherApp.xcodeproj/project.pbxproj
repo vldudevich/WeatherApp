@@ -38,7 +38,9 @@
 		86165117249A29CD00233905 /* FirstTabViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86165116249A29CD00233905 /* FirstTabViewPresenter.swift */; };
 		86165119249A2BC500233905 /* FirstTabViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86165118249A2BC500233905 /* FirstTabViewOutput.swift */; };
 		8616511B249A2C6300233905 /* FirstTabViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8616511A249A2C6300233905 /* FirstTabViewInput.swift */; };
-		862650E824F55D8D00B2138A /* InfoPlistParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862650E724F55D8D00B2138A /* InfoPlistParser.swift */; };
+		8626513D24F94D0700B2138A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8626513C24F94D0700B2138A /* GoogleService-Info.plist */; };
+		8626514024F94D7200B2138A /* MyWeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8626513E24F94D7200B2138A /* MyWeatherApp.xcdatamodeld */; };
+		8626514324F94E1C00B2138A /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626514224F94E1C00B2138A /* PersistenceService.swift */; };
 		862EF7A524D42D2500B82DFB /* SuggestionsTableViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EF7A424D42D2500B82DFB /* SuggestionsTableViewControllerPresenter.swift */; };
 		862EF7A724D42D4400B82DFB /* SuggestionsTableViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EF7A624D42D4400B82DFB /* SuggestionsTableViewControllerInput.swift */; };
 		862EF7A924D42D5B00B82DFB /* SuggestionsTableViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EF7A824D42D5B00B82DFB /* SuggestionsTableViewControllerOutput.swift */; };
@@ -71,7 +73,6 @@
 		86FA29FE24BDD39700F32088 /* SecondTabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA29FD24BDD39700F32088 /* SecondTabPresenter.swift */; };
 		86FA2A0024BDD40900F32088 /* SecondTabViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA29FF24BDD40900F32088 /* SecondTabViewInput.swift */; };
 		86FA2A0224BDD42100F32088 /* SecondTabViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA2A0124BDD42100F32088 /* SecondTabViewOutput.swift */; };
-		86FC964924C9B1BC0094BE7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86FC964824C9B1BC0094BE7C /* GoogleService-Info.plist */; };
 		BD17B9630A7A34C3FB8DB3E8 /* Pods_MyWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7AB271B4542C13E6C9E7E5 /* Pods_MyWeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,7 +110,9 @@
 		86165116249A29CD00233905 /* FirstTabViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewPresenter.swift; sourceTree = "<group>"; };
 		86165118249A2BC500233905 /* FirstTabViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewOutput.swift; sourceTree = "<group>"; };
 		8616511A249A2C6300233905 /* FirstTabViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewInput.swift; sourceTree = "<group>"; };
-		862650E724F55D8D00B2138A /* InfoPlistParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPlistParser.swift; sourceTree = "<group>"; };
+		8626513C24F94D0700B2138A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8626513F24F94D7200B2138A /* MyWeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyWeatherApp.xcdatamodel; sourceTree = "<group>"; };
+		8626514224F94E1C00B2138A /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		862EF7A424D42D2500B82DFB /* SuggestionsTableViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableViewControllerPresenter.swift; sourceTree = "<group>"; };
 		862EF7A624D42D4400B82DFB /* SuggestionsTableViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableViewControllerInput.swift; sourceTree = "<group>"; };
 		862EF7A824D42D5B00B82DFB /* SuggestionsTableViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableViewControllerOutput.swift; sourceTree = "<group>"; };
@@ -144,7 +147,6 @@
 		86FA29FD24BDD39700F32088 /* SecondTabPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabPresenter.swift; sourceTree = "<group>"; };
 		86FA29FF24BDD40900F32088 /* SecondTabViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewInput.swift; sourceTree = "<group>"; };
 		86FA2A0124BDD42100F32088 /* SecondTabViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewOutput.swift; sourceTree = "<group>"; };
-		86FC964824C9B1BC0094BE7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF7AB271B4542C13E6C9E7E5 /* Pods_MyWeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -311,9 +313,16 @@
 			isa = PBXGroup;
 			children = (
 				86FA29F524BDB2CB00F32088 /* Utils.swift */,
-				862650E724F55D8D00B2138A /* InfoPlistParser.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8626514124F94DFA00B2138A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				86EE267124EC4DFF00385F87 /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		862EF7A024D3F99F00B82DFB /* SearchModule */ = {
@@ -357,7 +366,6 @@
 		86482D172487AC6B00ED31D8 = {
 			isa = PBXGroup;
 			children = (
-				86EE267124EC4DFF00385F87 /* UIView.swift */,
 				86482D222487AC6B00ED31D8 /* MyWeatherApp */,
 				86482D212487AC6B00ED31D8 /* Products */,
 				91A1F148B0AA09AAC07D72EA /* Pods */,
@@ -382,9 +390,12 @@
 				861650A72487EF2100233905 /* BusinessLayer */,
 				86482D2E2487AC6F00ED31D8 /* LaunchScreen.storyboard */,
 				86482D2C2487AC6F00ED31D8 /* Assets.xcassets */,
-				86FC964824C9B1BC0094BE7C /* GoogleService-Info.plist */,
+				8626513C24F94D0700B2138A /* GoogleService-Info.plist */,
 				86482D312487AC6F00ED31D8 /* Info.plist */,
 				862650E624F55D5F00B2138A /* Utils */,
+				8626514124F94DFA00B2138A /* Extensions */,
+				8626513E24F94D7200B2138A /* MyWeatherApp.xcdatamodeld */,
+				8626514224F94E1C00B2138A /* PersistenceService.swift */,
 			);
 			path = MyWeatherApp;
 			sourceTree = "<group>";
@@ -593,8 +604,8 @@
 				861650A12487D6AA00233905 /* SecondTabViewController.storyboard in Resources */,
 				86482D2D2487AC6F00ED31D8 /* Assets.xcassets in Resources */,
 				86482D2B2487AC6C00ED31D8 /* MyTabBarController.storyboard in Resources */,
+				8626513D24F94D0700B2138A /* GoogleService-Info.plist in Resources */,
 				86811B8324D1A43100B47127 /* SuggestionsTableViewController.storyboard in Resources */,
-				86FC964924C9B1BC0094BE7C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,8 +699,8 @@
 				861650B62488F11400233905 /* Wind.swift in Sources */,
 				86165115249A29B500233905 /* FirstTabConfigurator.swift in Sources */,
 				86FA29FC24BDD28100F32088 /* SecondTabInitializer.swift in Sources */,
-				862650E824F55D8D00B2138A /* InfoPlistParser.swift in Sources */,
 				861650FF24990CB500233905 /* CoordForecast.swift in Sources */,
+				8626514024F94D7200B2138A /* MyWeatherApp.xcdatamodeld in Sources */,
 				861650F92498FCCE00233905 /* WindForecast.swift in Sources */,
 				86F94EF424E4212000284A0A /* MyPageViewController.swift in Sources */,
 				861650B02488F0B600233905 /* Weather.swift in Sources */,
@@ -732,6 +743,7 @@
 				86FA29FE24BDD39700F32088 /* SecondTabPresenter.swift in Sources */,
 				8616509E2487D63100233905 /* TodayWeatherContentViewController.swift in Sources */,
 				8616510A249A0E4000233905 /* MyTabBarPresenter.swift in Sources */,
+				8626514324F94E1C00B2138A /* PersistenceService.swift in Sources */,
 				861650A92488D94500233905 /* CityWeather.swift in Sources */,
 				861650A62487EF1B00233905 /* API.swift in Sources */,
 				86165117249A29CD00233905 /* FirstTabViewPresenter.swift in Sources */,
@@ -942,6 +954,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8626513E24F94D7200B2138A /* MyWeatherApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8626513F24F94D7200B2138A /* MyWeatherApp.xcdatamodel */,
+			);
+			currentVersion = 8626513F24F94D7200B2138A /* MyWeatherApp.xcdatamodel */;
+			path = MyWeatherApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 86482D182487AC6B00ED31D8 /* Project object */;
 }
