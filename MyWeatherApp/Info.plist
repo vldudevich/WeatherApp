@@ -16,6 +16,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -27,8 +29,6 @@
 	<string>We’ll use this to personalize your app experience</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We’ll use this to personalize your app experience</string>
-	<key>LSApplicationCategoryType</key>
-	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>MyTabBarController</string>
 	<key>UIMainStoryboardFile</key>
@@ -40,8 +40,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

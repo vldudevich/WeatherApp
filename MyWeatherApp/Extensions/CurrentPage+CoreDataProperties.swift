@@ -2,7 +2,7 @@
 //  CurrentPage+CoreDataProperties.swift
 //  
 //
-//  Created by vladislav on 28.08.2020.
+//  Created by vladislav on 31.08.2020.
 //
 //
 
@@ -16,6 +16,6 @@ extension CurrentPage {
         return NSFetchRequest<CurrentPage>(entityName: "CurrentPage")
     }
 
-    @NSManaged public var index: Int64
+    @NSManaged public var cityIndex: Int16
 
 }

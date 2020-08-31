@@ -41,6 +41,11 @@
 		8626513D24F94D0700B2138A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8626513C24F94D0700B2138A /* GoogleService-Info.plist */; };
 		8626514024F94D7200B2138A /* MyWeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8626513E24F94D7200B2138A /* MyWeatherApp.xcdatamodeld */; };
 		8626514324F94E1C00B2138A /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626514224F94E1C00B2138A /* PersistenceService.swift */; };
+		8626514D24FCF1AC00B2138A /* URLComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626514C24FCF1AC00B2138A /* URLComponents.swift */; };
+		8626516224FD17D000B2138A /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626515F24FD17CF00B2138A /* City+CoreDataClass.swift */; };
+		8626516324FD17D000B2138A /* CurrentPage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626516024FD17CF00B2138A /* CurrentPage+CoreDataClass.swift */; };
+		8626516424FD17D000B2138A /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626516124FD17D000B2138A /* City+CoreDataProperties.swift */; };
+		8626516524FD17D000B2138A /* CurrentPage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626515E24FD17CF00B2138A /* CurrentPage+CoreDataProperties.swift */; };
 		862EF7A524D42D2500B82DFB /* SuggestionsTableViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EF7A424D42D2500B82DFB /* SuggestionsTableViewControllerPresenter.swift */; };
 		862EF7A724D42D4400B82DFB /* SuggestionsTableViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EF7A624D42D4400B82DFB /* SuggestionsTableViewControllerInput.swift */; };
 		862EF7A924D42D5B00B82DFB /* SuggestionsTableViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862EF7A824D42D5B00B82DFB /* SuggestionsTableViewControllerOutput.swift */; };
@@ -113,6 +118,11 @@
 		8626513C24F94D0700B2138A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8626513F24F94D7200B2138A /* MyWeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyWeatherApp.xcdatamodel; sourceTree = "<group>"; };
 		8626514224F94E1C00B2138A /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		8626514C24FCF1AC00B2138A /* URLComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponents.swift; sourceTree = "<group>"; };
+		8626515E24FD17CF00B2138A /* CurrentPage+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CurrentPage+CoreDataProperties.swift"; path = "/Users/vladislav/WeatherApp/MyWeatherApp/Extensions/CurrentPage+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		8626515F24FD17CF00B2138A /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "City+CoreDataClass.swift"; path = "/Users/vladislav/WeatherApp/MyWeatherApp/Extensions/City+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		8626516024FD17CF00B2138A /* CurrentPage+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CurrentPage+CoreDataClass.swift"; path = "/Users/vladislav/WeatherApp/MyWeatherApp/Extensions/CurrentPage+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		8626516124FD17D000B2138A /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "City+CoreDataProperties.swift"; path = "/Users/vladislav/WeatherApp/MyWeatherApp/Extensions/City+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		862EF7A424D42D2500B82DFB /* SuggestionsTableViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableViewControllerPresenter.swift; sourceTree = "<group>"; };
 		862EF7A624D42D4400B82DFB /* SuggestionsTableViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableViewControllerInput.swift; sourceTree = "<group>"; };
 		862EF7A824D42D5B00B82DFB /* SuggestionsTableViewControllerOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableViewControllerOutput.swift; sourceTree = "<group>"; };
@@ -321,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				86EE267124EC4DFF00385F87 /* UIView.swift */,
+				8626514C24FCF1AC00B2138A /* URLComponents.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,6 +406,10 @@
 				862650E624F55D5F00B2138A /* Utils */,
 				8626514124F94DFA00B2138A /* Extensions */,
 				8626513E24F94D7200B2138A /* MyWeatherApp.xcdatamodeld */,
+				8626515F24FD17CF00B2138A /* City+CoreDataClass.swift */,
+				8626516124FD17D000B2138A /* City+CoreDataProperties.swift */,
+				8626516024FD17CF00B2138A /* CurrentPage+CoreDataClass.swift */,
+				8626515E24FD17CF00B2138A /* CurrentPage+CoreDataProperties.swift */,
 				8626514224F94E1C00B2138A /* PersistenceService.swift */,
 			);
 			path = MyWeatherApp;
@@ -720,10 +735,12 @@
 				861650F52498FB5100233905 /* WeatherForecast.swift in Sources */,
 				86F94F1A24E6DC1D00284A0A /* TodayWeatherContentViewOutput.swift in Sources */,
 				86B8F59624C0A2F100A8EDB4 /* HeaderDailyForecast.swift in Sources */,
+				8626516424FD17D000B2138A /* City+CoreDataProperties.swift in Sources */,
 				862EF7AB24D42DC400B82DFB /* SuggestionsTableViewControllerInitializer.swift in Sources */,
 				8616510E249A0ED000233905 /* MyTabBarViewOutput.swift in Sources */,
 				86482D242487AC6C00ED31D8 /* AppDelegate.swift in Sources */,
 				86811B8524D1B09E00B47127 /* SuggestionsTableViewController.swift in Sources */,
+				8626516324FD17D000B2138A /* CurrentPage+CoreDataClass.swift in Sources */,
 				86FA29F424BDA0B600F32088 /* Main.swift in Sources */,
 				861650FB2498FD7100233905 /* SystemForecast.swift in Sources */,
 				861650FD24990B6900233905 /* CityForecast.swift in Sources */,
@@ -738,11 +755,14 @@
 				86FA2A0224BDD42100F32088 /* SecondTabViewOutput.swift in Sources */,
 				861650A32487D6B800233905 /* SecondTabViewController.swift in Sources */,
 				86F94F1224E6D7FF00284A0A /* TodayWeatherContentInitializer.swift in Sources */,
+				8626516224FD17D000B2138A /* City+CoreDataClass.swift in Sources */,
 				8616511B249A2C6300233905 /* FirstTabViewInput.swift in Sources */,
 				86FA29FA24BDD27400F32088 /* SecondTabConfigurator.swift in Sources */,
 				86FA29FE24BDD39700F32088 /* SecondTabPresenter.swift in Sources */,
+				8626516524FD17D000B2138A /* CurrentPage+CoreDataProperties.swift in Sources */,
 				8616509E2487D63100233905 /* TodayWeatherContentViewController.swift in Sources */,
 				8616510A249A0E4000233905 /* MyTabBarPresenter.swift in Sources */,
+				8626514D24FCF1AC00B2138A /* URLComponents.swift in Sources */,
 				8626514324F94E1C00B2138A /* PersistenceService.swift in Sources */,
 				861650A92488D94500233905 /* CityWeather.swift in Sources */,
 				861650A62487EF1B00233905 /* API.swift in Sources */,
@@ -899,6 +919,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = S6X8QU6ZAU;
 				INFOPLIST_FILE = MyWeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -920,6 +941,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = S6X8QU6ZAU;
 				INFOPLIST_FILE = MyWeatherApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -2,7 +2,7 @@
 //  City+CoreDataProperties.swift
 //  
 //
-//  Created by vladislav on 28.08.2020.
+//  Created by vladislav on 31.08.2020.
 //
 //
 

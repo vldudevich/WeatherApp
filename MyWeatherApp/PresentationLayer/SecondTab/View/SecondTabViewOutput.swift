@@ -10,5 +10,6 @@ import Foundation
 
 protocol SecondTabViewOutput {
     func onViewDidLoad()
+    func onViewWillApear()
     func getForecastData(cityToSearch: String)
 }

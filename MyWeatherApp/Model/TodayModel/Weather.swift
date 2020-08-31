@@ -34,7 +34,7 @@ struct Weather: Codable  {
     }
     
     private func getIconURL(bigSize: Bool) -> String {
-        return APIConstants.imageURL + (self.icon ?? "") + (bigSize ? ".png" : "@2x.png")
+        return APIConstants.imageURL.rawValue + (self.icon ?? "") + (bigSize ? ".png" : "@2x.png")
     }
     
     func getImage(bigSize: Bool, succes: @escaping (_ image: UIImage) -> Void)  {

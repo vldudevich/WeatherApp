@@ -7,28 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
 class SecondTabViewController: UIViewController {
     
-    var test = [Int]()
-    var forecast = [ListForecast]()
+    private var rowsInSection = [Int]()
+    private var forecast = [ListForecast]()
+    private var index: Int = 0
+    private var cities = [String]()
     
     @IBOutlet private weak var dailyTableView: UITableView!
     
     var output: SecondTabViewOutput!
     
-    var hiddenSections = Set<Int>()
-
+    private var hiddenSections = Set<Int>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         output.onViewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        if Utils.indexPage > -1 && Utils.cities.count > 0 {
-            output.getForecastData(cityToSearch: Utils.cities[Utils.indexPage])
-        }
+        output.onViewWillApear()
     }
     
     @objc private func pressForHideSection(sender: UIButton) {
@@ -36,7 +37,7 @@ class SecondTabViewController: UIViewController {
         func indexPathsForSection() -> [IndexPath] {
             var indexPaths = [IndexPath]()
             
-            for row in 0..<test[section] {
+            for row in 0..<rowsInSection[section] {
                 indexPaths.append(IndexPath(row: row,
                                             section: section))
             }
@@ -48,7 +49,7 @@ class SecondTabViewController: UIViewController {
             hiddenSections.remove(section)
             dailyTableView.insertRows(at: indexPathsForSection(),
                                       with: .fade)
-        } else if hiddenSections.count != test.count - 1 {
+        } else if hiddenSections.count != rowsInSection.count - 1 {
             hiddenSections.insert(section)
             dailyTableView.deleteRows(at: indexPathsForSection(),
                                       with: .fade)
@@ -57,7 +58,7 @@ class SecondTabViewController: UIViewController {
 
 extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return test.count
+        return rowsInSection.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,9 +66,9 @@ extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
         
-        return test[section]
+        return rowsInSection[section]
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let myView = dailyTableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderDailyForecast") as? HeaderDailyForecast
         myView?.configure(for: section)
@@ -98,13 +99,13 @@ extension SecondTabViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SecondTabViewController: SecondTabViewInput {
-
+    
     func onForecastGet(results: DailyForecast) {
         forecast = results.list
         
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
+        
         var dateSource = dateFormater.date(from: results.list[0].dateText)
         dateFormater.dateFormat = "yyyy-MM-dd"
         var lastDate = dateFormater.string(from: dateSource!)
@@ -114,19 +115,19 @@ extension SecondTabViewController: SecondTabViewInput {
                 count += 1
             } else {
                 dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
+                
                 dateSource = dateFormater.date(from: item.dateText)
                 dateFormater.dateFormat = "yyyy-MM-dd"
                 
                 lastDate = dateFormater.string(from: dateSource!)
-                test.append(count)
+                rowsInSection.append(count)
                 
                 count = 0
             }
         }
         dailyTableView.reloadData()
     }
-        
+    
     func setupState() {
         self.navigationItem.title = "Forecast"
         

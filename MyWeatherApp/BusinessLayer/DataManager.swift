@@ -11,11 +11,10 @@ import UIKit
 
 class DataManager {
     
-    static let sharedManager = DataManager()
-    
     func getWeatherData(cityToSearch: String, succes: @escaping (_ weather: CityWeather) -> Void) {
-        API.sharedManager.getWeatherByName(cityToSearch: cityToSearch, success: { (data) in
-            CityWeather.parseResponse(responseData: data) { (weather) in
+        let api = API()
+        api.getWeatherByName(cityToSearch: cityToSearch, success: { (data) in
+            api.parseResponse(responseData: data) { (weather) in
                 succes(weather)
             }
         }) { (error) in
@@ -24,8 +23,9 @@ class DataManager {
     }
     
     func getDailyForeast(cityToSearch: String, success: @escaping (_ forecast: DailyForecast) -> Void) {
-        API.sharedManager.getDailyForecast(cityToSearch: cityToSearch, success: { (data) in
-            DailyForecast.parseResponse(responseData: data) { (forecast) in
+        let api = API()
+        api.getDailyForecast(cityToSearch: cityToSearch, success: { (data) in
+            api.parseResponse(responseData: data) { (forecast) in
                 success(forecast)
             }
         }) { (error) in

@@ -13,11 +13,14 @@ class FirstTabViewController: UIViewController {
     @IBOutlet private weak var contentView: UIView!
     
     var output: FirstTabViewOutput!
-    var pageController = MyPageViewController()
+    
+    private var pageController = MyPageViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         output.onViewDidLoad()
+        output.loadDataFromBD()
     }
     
     @objc func addButtonTouchUpInside() {

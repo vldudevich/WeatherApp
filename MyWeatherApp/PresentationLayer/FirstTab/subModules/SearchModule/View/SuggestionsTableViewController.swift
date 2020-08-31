@@ -15,7 +15,7 @@ protocol SuggestionsTableResultDelegate {
 
 class SuggestionsTableViewController: UITableViewController {
 
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     
     private var searchCompleter: MKLocalSearchCompleter?
     
@@ -25,15 +25,14 @@ class SuggestionsTableViewController: UITableViewController {
     
     var delegate: SuggestionsTableResultDelegate?
     
-    var completerResults: [MKLocalSearchCompletion]?
+    private var completerResults: [MKLocalSearchCompletion]?
     
     var output: SuggestionsTableViewControllerOutput!
     
-    var flag = false
+    private var flag = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         output.onViewDidLoad()
     }
     
@@ -48,8 +47,6 @@ class SuggestionsTableViewController: UITableViewController {
     }
     
     func retriveCurrentLocation(){
-        
-        locationManager.requestWhenInUseAuthorization()
         
         var currentLoc: CLLocation!
         
@@ -91,8 +88,6 @@ class SuggestionsTableViewController: UITableViewController {
     
     @objc func getCurrentLocation() {
         retriveCurrentLocation()
-       
-        
     }
 }
 
@@ -170,6 +165,8 @@ private class SuggestedCompletionTableViewCell: UITableViewCell {
 extension SuggestionsTableViewController: SuggestionsTableViewControllerInput {
     func setupState() {
         
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         configureButtoCurrentLocation()
         
         suggestionController = UITableViewController(style: .grouped)
@@ -186,7 +183,6 @@ extension SuggestionsTableViewController: SuggestionsTableViewControllerInput {
         
         startProvidingCompletions()
     }
-
 }
 
 extension SuggestionsTableViewController: UISearchBarDelegate {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreLocation
+import CoreData
 
 class FirstTabViewPresenter: FirstTabViewOutput {
     
@@ -17,16 +17,41 @@ class FirstTabViewPresenter: FirstTabViewOutput {
         view.setupState()
     }
     
+    func loadDataFromBD() {
+        
+        let fetchRequest:
+            NSFetchRequest<City> = City.fetchRequest()
+
+        do {
+            let currentPage = try PersistenceService.shared.persistentContainer.viewContext.fetch(fetchRequest)
+            for cities in currentPage.reversed() {
+                loadWeatherData(cityToSearch: cities.name ?? "")
+            }
+        } catch {}
+    }
+    
     func getTodayData(cityToSearch: String) {
-        view.setupState()
         getWeatherData(cityToSearch: cityToSearch)
     }
     
     private func getWeatherData(cityToSearch: String) {
-        DataManager.sharedManager.getWeatherData(cityToSearch: cityToSearch) { (results) in
+        let dataManager = DataManager()
+        dataManager.getWeatherData(cityToSearch: cityToSearch) { (results) in
             let page = UIStoryboard(name: "TodayWeatherContentViewController", bundle: nil).instantiateViewController(withIdentifier: "TodayWeatherContentViewController") as? TodayWeatherContentViewController
             page?.results = results
-            Utils.cities.append(cityToSearch)
+            let city = City(context: PersistenceService.shared.persistentContainer.viewContext)
+            city.name = cityToSearch
+            PersistenceService.shared.saveContext()
+//
+            self.view.onWeatherPageGet(results: page!)
+        }
+    }
+    
+    private func loadWeatherData(cityToSearch: String) {
+        let dataManager = DataManager()
+        dataManager.getWeatherData(cityToSearch: cityToSearch) { (results) in
+            let page = UIStoryboard(name: "TodayWeatherContentViewController", bundle: nil).instantiateViewController(withIdentifier: "TodayWeatherContentViewController") as? TodayWeatherContentViewController
+            page?.results = results
             self.view.onWeatherPageGet(results: page!)
         }
     }

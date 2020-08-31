@@ -1,12 +1,13 @@
 import UIKit
-import SwiftyPlistManager
+import CoreData
 
 class MyPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     // MARK: Delegate methords
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = pages.firstIndex(of: pageContentViewController)!
-        Utils.indexPage = pageControl.currentPage
+        saveCurrentPage(for: pageControl.currentPage)
+        //Utils.indexPage = pageControl.currentPage
     }
     
     // MARK: Data source functions.
@@ -16,7 +17,8 @@ class MyPageViewController: UIPageViewController, UIPageViewControllerDelegate, 
         }
         
         let previousIndex = viewControllerIndex - 1
-        Utils.indexPage = pageControl.currentPage
+        saveCurrentPage(for: pageControl.currentPage)
+        //Utils.indexPage = pageControl.currentPage
         // User is on the first view controller and swiped left to loop to
         // the last view controller.
         guard previousIndex >= 0 else {
@@ -39,7 +41,8 @@ class MyPageViewController: UIPageViewController, UIPageViewControllerDelegate, 
         
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = pages.count
-        Utils.indexPage = pageControl.currentPage
+        saveCurrentPage(for: pageControl.currentPage)
+        //Utils.indexPage = pageControl.currentPage
         // User is on the last view controller and swiped right to loop to
         // the first view controller.
         guard orderedViewControllersCount != nextIndex else {
@@ -64,11 +67,22 @@ class MyPageViewController: UIPageViewController, UIPageViewControllerDelegate, 
         setViewControllers([pages.last!], direction: .forward, animated: true, completion: nil)
         pageControl.numberOfPages = pages.count
         pageControl.currentPage = pages.count - 1
-        Utils.indexPage = pageControl.currentPage
+        saveCurrentPage(for: pageControl.currentPage)
+        //Utils.indexPage = pageControl.currentPage
     }
     
     func removeCurrentPage() {
-
+        
+        let fetchRequest:
+            NSFetchRequest<City> = City.fetchRequest()
+        
+        do {
+            let last =  try PersistenceService.shared.persistentContainer.viewContext.fetch(fetchRequest).last!
+            PersistenceService.shared.persistentContainer.viewContext.delete(last)
+            PersistenceService.shared.saveContext()
+            
+        } catch {}
+        
         if pages.count > 1 {
             pages.remove(at: pageControl.currentPage)
             if pageControl.currentPage == 0 {
@@ -85,9 +99,15 @@ class MyPageViewController: UIPageViewController, UIPageViewControllerDelegate, 
         
         pageControl.numberOfPages = pages.count
         pageControl.currentPage = pages.count - 1
-        Utils.indexPage = pageControl.currentPage
+        saveCurrentPage(for: pageControl.currentPage)
+        //Utils.indexPage = pageControl.currentPage
     }
     
+    func saveCurrentPage(for index: Int) {
+        let currentPage = CurrentPage(context: PersistenceService.shared.persistentContainer.viewContext)
+        currentPage.cityIndex = Int16(index)
+        PersistenceService.shared.saveContext()
+    }
     override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     }

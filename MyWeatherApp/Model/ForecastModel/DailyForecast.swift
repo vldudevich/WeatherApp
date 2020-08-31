@@ -10,17 +10,6 @@ import Foundation
 
 struct DailyForecast: Codable {
     
-    static func parseResponse( responseData: Data, completionHandler: (DailyForecast) -> Void) {
-        let decoder = JSONDecoder()
-        do {
-            let moviesResponse = try decoder.decode(DailyForecast.self, from: responseData)
-            completionHandler(moviesResponse)
-            return
-        } catch {
-            print(error)
-        }
-    }
-    
     static var dataFormaterDays: DateFormatter = {
         var format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -53,7 +42,6 @@ struct DailyForecast: Codable {
                 dateSource = Self.dataFormaterDays.date(from: item.dateText)
                 
                 lastDate = Self.dataFormaterTime.string(from: dateSource!)
-                print(count)
             }
         }
         return coz

@@ -10,16 +10,6 @@ import Foundation
 
 struct CityWeather: Codable {
     
-    static func parseResponse( responseData: Data, completionHandler: (CityWeather) -> Void) {
-        let decoder = JSONDecoder()
-        do {
-            let moviesResponse = try decoder.decode(CityWeather.self, from: responseData)
-            completionHandler(moviesResponse)
-        } catch {
-            print(error)
-        }
-    }
-    
     var coordinate: Coordinate
     var weather: [Weather]
     var base: String

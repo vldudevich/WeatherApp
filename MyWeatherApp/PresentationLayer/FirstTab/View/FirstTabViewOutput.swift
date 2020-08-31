@@ -10,5 +10,6 @@ import UIKit
 
 protocol FirstTabViewOutput {
     func onViewDidLoad()
+    func loadDataFromBD()
     func getTodayData(cityToSearch: String)
 }
