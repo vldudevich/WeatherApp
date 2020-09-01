@@ -125,9 +125,9 @@ class MyPageViewController: UIPageViewController, UIPageViewControllerDelegate, 
     
     func configPageControl() {
         
-        let controlHeight: CGFloat = 50
+        let controlHeight: CGFloat = 10
         let bottomSpace: CGFloat = 175
-        let yPosition = view.frame.size.height - (controlHeight + bottomSpace)
+        let yPosition = controlHeight
         let fullScreenWidth = view.frame.size.width
         let frame = CGRect(x: 0, y: yPosition, width: fullScreenWidth, height: controlHeight)
         

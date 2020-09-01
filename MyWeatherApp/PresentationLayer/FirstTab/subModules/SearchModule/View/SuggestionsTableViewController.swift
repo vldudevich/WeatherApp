@@ -78,7 +78,6 @@ class SuggestionsTableViewController: UITableViewController {
     private func startProvidingCompletions() {
         searchCompleter = MKLocalSearchCompleter()
         searchCompleter?.delegate = self
-        searchCompleter?.resultTypes = .address
     }
     
     private func stopProvidingCompletions() {
