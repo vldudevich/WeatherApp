@@ -31,9 +31,9 @@ class API {
     func parseResponse<T: Codable>(responseData: Data, completionHandler: (T) -> Void) {
         let decoder = JSONDecoder()
         do {
-            let moviesResponse = try decoder.decode(T.self, from: responseData)
-            print(moviesResponse)
-            completionHandler(moviesResponse)
+            let weatherResponse = try decoder.decode(T.self, from: responseData)
+            print(weatherResponse)
+            completionHandler(weatherResponse)
         } catch {
             print(error)
         }
