@@ -28,7 +28,7 @@ class FirstTabViewPresenter: FirstTabViewOutput {
                 loadWeatherData(cityToSearch: cities.name ?? "")
             }
         } catch {}
-    }
+    }   
     
     func getTodayData(cityToSearch: String) {
         getWeatherData(cityToSearch: cityToSearch)

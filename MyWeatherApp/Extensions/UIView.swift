@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     func fillToSuperview() {
-        // https://videos.letsbuildthatapp.com/
+        
         translatesAutoresizingMaskIntoConstraints = false
         if let superview = superview {
             let left = leftAnchor.constraint(equalTo: superview.leftAnchor)

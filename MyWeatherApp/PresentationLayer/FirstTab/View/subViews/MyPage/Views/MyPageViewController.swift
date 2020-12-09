@@ -58,7 +58,7 @@ class MyPageViewController: UIPageViewController, UIPageViewControllerDelegate, 
         return pages[nextIndex]
     }
     
-    let pageControl = UIPageControl()
+    let pageControl = UIPageControl()щ
     
     var pages = [UIViewController]()
     

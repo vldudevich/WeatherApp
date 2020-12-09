@@ -15,12 +15,11 @@ class SecondTabViewController: UIViewController {
     private var forecast = [ListForecast]()
     private var index: Int = 0
     private var cities = [String]()
-    
+    private var hiddenSections = Set<Int>()
     @IBOutlet private weak var dailyTableView: UITableView!
     
     var output: SecondTabViewOutput!
     
-    private var hiddenSections = Set<Int>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
